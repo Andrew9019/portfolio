@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #C30E59, #F8E1B7);
+            overflow-x: hidden;
+            color: #444;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 10px 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #E82561;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 2px 2px;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .flex-item {
+            background: #F2AE66;
+            border-radius: 20px;
+            padding: 30px;
+            width: 850px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .flex-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: #8174A0;
+            text-align: center;
+            margin-bottom: 2px;
+            font-family: 'Pacifico', cursive;
+            font-size: 60px;
+            fill: none;
+            stroke: #F8E1B7;
+            stroke-width: 2;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: write 4s ease forwards;
+        }
+
+        h2 i {
+            margin-right: 10px; /* Space between icon and text */
+            color: #F8E1B7; /* Icon color */
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #C30E59;
+            color: #FFF;
+        }
+
+        /* Handwritten SVG Animation */
+        @keyframes write {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* Floating Dots Animation */
+        .floating-dots {
+            position: absolute;
+            z-index: -1;
+            pointer-events: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .dot {
+            position: absolute;
+            background-color: #F2AE66;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: dotAnimation 4s infinite ease-in-out;
+        }
+
+        @keyframes dotAnimation {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-20px) scale(1.5);
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.8;
+            }
+        }
+
+        /* Random Dot Positioning */
+        .dot:nth-child(1) { width: 10px; height: 10px; left: 10%; animation-duration: 6s; animation-delay: 1s; }
+        .dot:nth-child(2) { width: 12px; height: 12px; left: 30%; animation-duration: 7s; animation-delay: 3s; }
+        .dot:nth-child(3) { width: 8px; height: 8px; left: 50%; animation-duration: 5s; animation-delay: 2s; }
+        .dot:nth-child(4) { width: 14px; height: 14px; left: 70%; animation-duration: 6s; animation-delay: 4s; }
+        .dot:nth-child(5) { width: 9px; height: 9px; left: 90%; animation-duration: 5s; animation-delay: 1s; }
+
+        /* Styling for Animated Title */
+        .animated-title {
+            position: relative;
+            top: 100px; /* Positioning the title */
+            text-align: center;
+        }
+
+        .animated-title svg text {
+            font-family: 'Pacifico', cursive;
+            font-size: 90px;
+            fill: none;
+            stroke: #F8E1B7;
+            stroke-width: 2;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: write 4s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-title">
+        <svg viewBox="0 0 600 100">
+            <text x="50" y="70">Amal Arif</text>
+        </svg>
+    </div>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#skills"><i class="fas fa-cogs"></i> Skills</a></li>
+                <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2><i class="fas fa-user"></i> About Me</h2>
+        <div class="flex-container">
+            <div class="flex-item">
+                <h3>FS Amal Arif</h3>
+                <p>Email: amalarif72@gmail.com</p>
+                <p>Phone: +91-8008707693</p>
+                <p><a href="https://www.linkedin.com/in/amal-arif" target="_blank">LinkedIn</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="career-objective">
+        <h2><i class="fas fa-clipboard-list"></i> Career Objective</h2>
+        <div class="flex-container">
+            <div class="flex-item">
+                <p>To leverage my academic knowledge, technical skills, and internship experience in an entry-level position where I can contribute to the growth of the organization while continuously learning and enhancing my professional abilities. I aim to grow as a competent professional in the field of technology, particularly in cybersecurity, data analytics, or software development.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2><i class="fas fa-cogs"></i> Skills</h2>
+        <div class="flex-container">
+            <div class="flex-item">
+                <p>HTML & CSS</p>
+                <p>C</p>
+                <p>Java Basics</p>
+                <p>Figma Software</p>
+                <p>AI Tools</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2><i class="fas fa-briefcase"></i> Internships</h2>
+        <div class="flex-container">
+            <div class="flex-item">
+                <ul>
+                    <li>Google Android Developer Virtual (Jan’24 – Mar'24)</li>
+                    <li>Cybersecurity by Palo Alto Networks (Dec’23 - Feb’23)</li>
+                    <li>Network Security Professionals by Fortinet Training Institute (May’23 – Jul’23)</li>
+                    <li>Celonis Process Mining (Sep’22 – Oct’22)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+        <div class="flex-container">
+            <div class="flex-item">
+                <p><strong>Phishing Website Detection (2024):</strong> Used ML models & deep neural nets to detect phishing websites.</p>
+            </div>
+            <div class="flex-item">
+                <p><strong>Tour & Travels Management System (2023):</strong> Designed a system providing tourism guidance, online booking, and customized packages.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2><i class="fas fa-envelope"></i> Contact Me</h2>
+        <div class="flex-container">
+            <div class="flex-item">
+                <p>Email: <a href="mailto:amalarif72@gmail.com">amalarif72@gmail.com</a></p>
+                <p>Phone: +91-8008707693</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 FS Amal Arif. All rights reserved.</p>
+    </footer>
+
+    <div class="floating-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+
+</body>
+</html>
